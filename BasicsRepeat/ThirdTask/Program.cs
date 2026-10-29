@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Collections.Generic;
 namespace BasicRepeat
 {
     class Program
@@ -31,10 +32,46 @@ namespace BasicRepeat
             System.Console.WriteLine(fahrenhtein);
 
             //Third task
+            int num1;
+            List<int> ints = new List<int>();
             for(int i = 0; i < 5; i++)
             {
                 Console.Write("Add number: ");
-                
+                num1 = int.Parse(Console.ReadLine());
+                ints.Add(num1);
+            }
+            ints.Sort();
+            foreach(var input in ints)
+            {
+                Console.WriteLine(input);
+            }
+            ints.Reverse();
+            foreach(var input in ints)
+            {
+                Console.WriteLine(input);
+            }
+
+            //Fourth task
+            Dictionary<string, int> dicWord = new Dictionary<string, int>();
+            string words;
+            string word;
+            Console.Write("Write your text: ");
+            words = Console.ReadLine();
+            for(int i = 0; i < words.Length; i++)
+            {
+                word = Convert.ToString(words[i]);
+                if (!dicWord.ContainsKey(word))
+                {
+                    dicWord.Add(word, 1);
+                }
+                else
+                {
+                    dicWord[word]++;
+                }
+            }
+            foreach(var input in dicWord)
+            {
+                Console.WriteLine($"{input.Key} = {input.Value}");
             }
         }
     }
