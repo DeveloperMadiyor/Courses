@@ -24,4 +24,9 @@ public class Book
         Author = author;
         Price = price;
     }
+
+    public void DisplayBookInfo()
+    {
+        Console.WriteLine($"Book: {BookName}, Author: {Author}, Price: {Price}");
+    }
 }
